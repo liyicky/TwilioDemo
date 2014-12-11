@@ -3,7 +3,8 @@ class ResponseController < ApplicationController
 
   def receive
     @message = Message.new
-    @message.body = params[:body]
+    @message.body = params[:Body]
     @message.save
+    respond_to :json
   end
 end
